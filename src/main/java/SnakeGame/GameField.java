@@ -23,6 +23,11 @@ public class GameField extends JPanel {
 
     public GameField(){
         setBackground(Color.black);
+        loadImages();
+    }
+
+    public void initGame(){
+
     }
 
     public void loadImages(){
