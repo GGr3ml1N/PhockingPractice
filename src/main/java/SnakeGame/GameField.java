@@ -29,6 +29,6 @@ public class GameField extends JPanel {
         ImageIcon iia = new ImageIcon("apple.png");
         apple = iia.getImage();
         ImageIcon iid = new ImageIcon("dot.png");
-        dot = iia.getImage();
+        dot = iid.getImage();
     }
 }
