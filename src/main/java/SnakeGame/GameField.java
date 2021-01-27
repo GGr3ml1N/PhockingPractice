@@ -52,8 +52,16 @@ public class GameField extends JPanel implements ActionListener {
         dot = iid.getImage();
     }
 
+    public void move(){
+
+    }
+
     @Override
     public void actionPerformed(ActionEvent e) {
+        if(inGame){
+            move();
 
+        }
+        repaint();
     }
 }
