@@ -2,9 +2,11 @@ package SnakeGame;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.util.Random;
 
-public class GameField extends JPanel {
+public class GameField extends JPanel implements ActionListener {
     private final int SIZE = 320;
     private final int DOT_SIZE = 16;
     private final int ALL_DOTS = 400;
@@ -48,5 +50,10 @@ public class GameField extends JPanel {
         apple = iia.getImage();
         ImageIcon iid = new ImageIcon("dot.png");
         dot = iid.getImage();
+    }
+
+    @Override
+    public void actionPerformed(ActionEvent e) {
+
     }
 }
