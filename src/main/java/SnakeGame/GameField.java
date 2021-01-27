@@ -20,4 +20,10 @@ public class GameField extends JPanel {
     private boolean up = false;
     private boolean down = false;
     private boolean inGame = true;
+
+    public GameField(){
+        setBackground(Color.black);
+    }
+
+
 }
