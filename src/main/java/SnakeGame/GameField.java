@@ -25,5 +25,10 @@ public class GameField extends JPanel {
         setBackground(Color.black);
     }
 
-
+    public void loadImages(){
+        ImageIcon iia = new ImageIcon("apple.png");
+        apple = iia.getImage();
+        ImageIcon iid = new ImageIcon("dot.png");
+        dot = iia.getImage();
+    }
 }
