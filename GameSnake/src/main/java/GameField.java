@@ -76,11 +76,15 @@ public class GameField extends JPanel implements ActionListener {
         }
     }
 
+    private void checkCollissions() {
+    }
+
     @Override
     public void actionPerformed(ActionEvent e) {
         if (inGame) {
             move();
             checkApple();
+            checkCollissions();
         }
         repaint();
     }
