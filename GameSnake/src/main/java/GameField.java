@@ -2,6 +2,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.KeyAdapter;
 import java.util.Random;
 
 public class GameField extends JPanel implements ActionListener{
@@ -119,4 +120,9 @@ public class GameField extends JPanel implements ActionListener{
         }
         repaint();
     }
+
+class FieldKeyListener extends KeyAdapter{
+
+}
+
 }
