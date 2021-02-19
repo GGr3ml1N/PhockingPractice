@@ -24,38 +24,38 @@ public class GameField extends JPanel implements ActionListener {
     private boolean down = false;
     private boolean inGame = true;
 
-    public GameField(){
+    public GameField() {
         setBackground(Color.black);
         loadImages();
     }
 
-    public void initGame(){
+    public void initGame() {
         dots = 3;
-        for (int i = 0; i < dots; i++){
-            x[i] = 48 - i*DOT_SIZE;
+        for (int i = 0; i < dots; i++) {
+            x[i] = 48 - i * DOT_SIZE;
             y[i] = 48;
         }
-        timer = new Timer(250,this);
+        timer = new Timer(250, this);
         timer.start();
         createApple();
     }
 
-    public void createApple(){
-        appleX = new Random().nextInt(20)*DOT_SIZE;
-        appleY = new Random().nextInt(20)*DOT_SIZE;
+    public void createApple() {
+        appleX = new Random().nextInt(20) * DOT_SIZE;
+        appleY = new Random().nextInt(20) * DOT_SIZE;
     }
 
-    public void loadImages(){
+    public void loadImages() {
         ImageIcon iia = new ImageIcon("GameSmake/res/apple.png");
         apple = iia.getImage();
         ImageIcon iid = new ImageIcon("GameSmake/res/dot.png");
         dot = iid.getImage();
     }
 
-    public void move(){
-        for (int i = dots; i > 0; i-- ){
-            x[i] = x[i-1];
-            y[i] = y[i-1];
+    public void move() {
+        for (int i = dots; i > 0; i--) {
+            x[i] = x[i - 1];
+            y[i] = y[i - 1];
         }
         if (left) {
             x[0] -= DOT_SIZE;
@@ -74,15 +74,14 @@ public class GameField extends JPanel implements ActionListener {
     private void checkApple() {
 
     }
-}
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        if(inGame){
+        if (inGame) {
             move();
             checkApple();
         }
         repaint();
     }
-
+}
 
