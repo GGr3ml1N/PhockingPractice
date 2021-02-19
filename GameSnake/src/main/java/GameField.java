@@ -44,9 +44,9 @@ public class GameField extends JPanel implements ActionListener {
     }
 
     public void loadImages() {
-        ImageIcon iia = new ImageIcon("GameSmake/res/apple.png");
+        ImageIcon iia = new ImageIcon("GameSnake/res/apple.png");
         apple = iia.getImage();
-        ImageIcon iid = new ImageIcon("GameSmake/res/dot.png");
+        ImageIcon iid = new ImageIcon("GameSnake/res/dot.png");
         dot = iid.getImage();
     }
 
@@ -70,29 +70,29 @@ public class GameField extends JPanel implements ActionListener {
     }
 
     private void checkApple() {
-        if (x[0] == appleX && y[0] == appleY){
+        if (x[0] == appleX && y[0] == appleY) {
             dots++;
             createApple();
         }
     }
 
     private void checkCollisions() {
-        for (int i = dots; i >0 ; i--) {
-            if(i>4 && x[0] == x[i] && y[0] == y[i]){
+        for (int i = dots; i > 0; i--) {
+            if (i > 4 && x[0] == x[i] && y[0] == y[i]) {
                 inGame = false;
             }
         }
 
-        if(x[0]>SIZE){
+        if (x[0] > SIZE) {
             inGame = false;
         }
-        if(x[0]<0){
+        if (x[0] < 0) {
             inGame = false;
         }
-        if(y[0]>SIZE){
+        if (y[0] > SIZE) {
             inGame = false;
         }
-        if(y[0]<0){
+        if (y[0] < 0) {
             inGame = false;
         }
     }
