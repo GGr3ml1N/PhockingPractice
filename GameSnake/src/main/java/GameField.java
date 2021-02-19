@@ -3,6 +3,7 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyAdapter;
+import java.awt.event.KeyEvent;
 import java.util.Random;
 
 public class GameField extends JPanel implements ActionListener{
@@ -91,7 +92,7 @@ public class GameField extends JPanel implements ActionListener{
 
     public void checkCollisions(){
         for (int i = dots; i >0 ; i--) {
-            if(i>4 && x[0] == x[i] && y[0] == y[i]){
+            if (i>4 && x[0] == x[i] && y[0] == y[i]){
                 inGame = false;
             }
         }
@@ -122,7 +123,32 @@ public class GameField extends JPanel implements ActionListener{
     }
 
 class FieldKeyListener extends KeyAdapter{
+    @Override
+    public void keyPressed(KeyEvent e) {
+        super.keyPressed(e);
+        int key = e.getKeyCode();
+        if(key == KeyEvent.VK_LEFT && !right){
+            left = true;
+            up = false;
+            down = false;
+        }
+        if(key == KeyEvent.VK_RIGHT && !left){
+            right = true;
+            up = false;
+            down = false;
+        }
 
+        if(key == KeyEvent.VK_UP && !down){
+            right = false;
+            up = true;
+            left = false;
+        }
+        if(key == KeyEvent.VK_DOWN && !up){
+            right = false;
+            down = true;
+            left = false;
+        }
+    }
 }
 
 }
