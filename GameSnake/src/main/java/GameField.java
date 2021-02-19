@@ -4,6 +4,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
+import java.lang.reflect.Field;
 import java.util.Random;
 
 public class GameField extends JPanel implements ActionListener{
@@ -29,7 +30,8 @@ public class GameField extends JPanel implements ActionListener{
         setBackground(Color.black);
         loadImages();
         initGame();
-
+        addKeyListener(new FieldKeyListener());
+        setFocusable(true);
     }
 
     public void initGame(){
