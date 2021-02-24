@@ -11,6 +11,7 @@
     <modules>
         <module>GameSnake</module>
         <module>PingPong</module>
+        <module>F1</module>
     </modules>
 
     <properties>
